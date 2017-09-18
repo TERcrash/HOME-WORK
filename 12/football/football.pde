@@ -1,11 +1,15 @@
+// количество очков
 int score = 0;
 
-boolean isShooting;
+boolean isShooting; // шарик в полете?
+// координаты шарика
 int ballX;
 int ballY;
 
+// координаты сетки
 int netX = 330;
 int netY;
+// размеры сетки
 int netW = 51;
 int netH = 87;
 
