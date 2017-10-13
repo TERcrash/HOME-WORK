@@ -1,4 +1,4 @@
-float speed = 2;
+float speed = 4;
 float y = 0;
 int h = 60;
 
@@ -73,20 +73,18 @@ void updateBall() {
   if (isShooting) {
     stroke(#F2C553);
     point(ballX, ballY);
-    
-    if(ballX > width){
+
+    if (ballX > width) {
       isShooting = false;
     }
-    
+
     ballX += 6;
   }
 }
 
-void keyPressed() {
-  if (key == ' ') {
-    isShooting = true;
-    ballX = 0;
-    ballHolderX = 15;
-    ballHolderY = (int)y + h / 2;
-  }
+void mousePressed() {
+  isShooting = true;
+  ballX = 0;
+  ballHolderX = 15;
+  ballHolderY = (int)y + h / 2;
 }

@@ -7,7 +7,7 @@ int ballX;
 int ballY;
 
 // координаты сетки
-int netX = 330;
+int netX = 0;
 int netY;
 // размеры сетки
 int netW = 51;
@@ -17,6 +17,8 @@ boolean hit = false;
 
 void setup() {
   size(400, 400, P3D);
+
+  netX = width-70;
   init();
   respawnNet();
 }
