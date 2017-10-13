@@ -26,8 +26,13 @@ void draw() {
 
   if (isShooting) {
     updateBall();
+    float x=modelX(ballX, ballY, 0);
+    float y=modelY(ballX, ballY, 0);
+    if (x>netX && y>netY && y<netY+netH) {
+      applyHit();
+    }
   }
-
+  
   updatePaddle();
 }
 

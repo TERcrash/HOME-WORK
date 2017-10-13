@@ -1,4 +1,4 @@
-float speed = 5;
+float speed = 2;
 float y = 0;
 int h = 60;
 
