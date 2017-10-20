@@ -4,16 +4,21 @@ PImage car;
 void setup() {
   size(400, 400);
   car = loadImage("car.png");
+  for (int i=10; i <= 390; i=i+10) {
+    image(car, carX, i);
+  }
 }
 
 void draw() {
   background(30);
-  
+
   handleMotionKeys();
-  image(car, carX, 200);
+  for (int i=10; i <= 390; i=i+30) {
+    image(car, carX, i);
+  }
 }
 
-void handleMotionKeys(){
+void handleMotionKeys() {
   if (keyPressed) {
     if (key == 'a') {
       carX -= 2;
