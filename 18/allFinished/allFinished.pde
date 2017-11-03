@@ -1,3 +1,4 @@
+int w=1;
 int[] speeds = new int[8];
 int[] carXes = new int[8];
 PImage car;
@@ -8,7 +9,7 @@ void setup() {
   textSize(24);
   textAlign(CENTER, CENTER);
   fill(255);
-  
+
   car = loadImage("car.png");
 
   for (int i = 0; i < 8; i++) {
@@ -26,8 +27,12 @@ void draw() {
   }
 
   // упрости условие с помощью цикла
-  if (carXes[0] < 0 && carXes[1] < 0 && carXes[2] < 0 && carXes[3] < 0 && carXes[4] < 0 && carXes[5] < 0 && carXes[6] < 0 && carXes[7] < 0) {
-    finishRace();
+  for (int i=0; i<8; i=i+2) {
+    int w=1;
+    if (carXes[i] < 0 && carXes[w] < 0) {
+      finishRace();
+    }
+    w=w+2;
   }
 }
 
@@ -43,7 +48,7 @@ void updateCars() {
   }
 }
 
-void finishRace(){
+void finishRace() {
   text("Все машины финишировали!!!", width / 2, height / 2);
   finished = true;
 }

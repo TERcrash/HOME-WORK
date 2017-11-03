@@ -8,7 +8,7 @@ void setup() {
   textSize(24);
   textAlign(CENTER, CENTER);
   fill(255);
-  
+
   car = loadImage("car.png");
 
   for (int i = 0; i < 8; i++) {
@@ -26,8 +26,10 @@ void draw() {
   }
 
   // упрости условие с помощью цикла
-  if (carXes[0] < 0 || carXes[1] < 0 || carXes[2] < 0 || carXes[3] < 0 || carXes[4] < 0 || carXes[5] < 0 || carXes[6] < 0 || carXes[7] < 0) {
-    finishRace();
+  for (int i=0; i<8; i++) {
+    if (carXes[i] < 0) {
+      finishRace();
+    }
   }
 }
 
@@ -43,7 +45,7 @@ void updateCars() {
   }
 }
 
-void finishRace(){
+void finishRace() {
   text("Одна машина финишировала!!!", width / 2, height / 2);
   finished = true;
 }

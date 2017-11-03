@@ -1,9 +1,8 @@
-int speed = 1;
-int x1 = 230;
-int x2 = 300;
-int x3 = -140;
-int x4 = -20;
 int frogY = 220;
+int[] xes = {230,200,-140,-20};
+
+color[] colors = {#F0623A,#C13914,#447CB2,#6653D3};
+int[] speeds = {-2,-4,2,5};
 
 void setup() { 
   size(200, 250); 
@@ -22,11 +21,7 @@ void draw() {
 
   // машины
   noStroke();
-  drawFirstCar();
-  drawSecondCar();
-  drawThirdCar();
-  drawfourthCar();
-
+drawCars();
   // лягушка
   drawFrog();
 }
