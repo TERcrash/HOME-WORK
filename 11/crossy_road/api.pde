@@ -24,7 +24,9 @@ void drawCars() {
 void drawFrog() {
   fill(#58C62E);
   rect(100, frogY, 20, 20);
-  int index=0;
+  
+  //столкновения
+  int index=0;    
   for (int i=180; i>=60; i=i-40) {
     boolean collisionCar = frogY==i && abs(100-xes[index])<=40;
     index=index+1;
