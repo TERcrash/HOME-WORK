@@ -1,8 +1,8 @@
-int first = 1;
-int second = 2;
+int first = 78125689;
+int second = 78315687;
 
 if(first>second) {
-println(first);
+println(first+"__1");
 }else{
- println(second); 
+ println(second+"__2"); 
 }
