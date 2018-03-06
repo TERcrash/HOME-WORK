@@ -1,0 +1,39 @@
+1. Исправь задачу 4 из [прошлого дз](https://github.com/TERcrash/HOME-WORK/tree/master/33)
+
+2. Сделай [кнопку-переключатель](http://simplifier.github.io/processingcourse/switchbutton/)
+
+3. Доработай пример так, чтобы при нажатии кнопок влево-вправо переключалось направление движения на сответствующее
+
+   <details><summary>Пример</summary>
+
+   ```java
+   int x = 0;
+   int speed = 2;
+
+   void setup() {
+     size(480, 200);
+   }
+
+   void draw() {
+     background(255);
+
+     x = x + speed;
+
+     if (x < 0) {
+       x = 0;
+     } else if (x > width) {
+       x = width;
+     }
+
+     stroke(0);
+     fill(175);
+     ellipse(x, 100, 32, 32);
+   }
+   ```
+
+   </details>
+
+4. Добавь в прошлую программу обработку нажатия кнопок вверх и вниз
+
+5. Прочитай [теорию](https://github.com/UniumGames/Lessons/tree/master/10) к занятию №10
+
