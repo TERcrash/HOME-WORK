@@ -16,7 +16,7 @@ void draw() {
 
   if (side==right) {
     x=x+1;
-  }  
+  } 
   if (side==left) {
     x=x-1;
   }  
