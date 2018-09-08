@@ -2,15 +2,18 @@
 
 class Program {
     static void Main(string[] args) {
-        Task.PrintColoredText("This text should be red", ConsoleColor.Red);
-        Task.PrintColoredText("This text should be yellow", ConsoleColor.Yellow);
+        Task.PrintAsterisks(3);
         Console.Read();
     }
 }
 
+
 class Task {
-    public static void PrintColoredText(string text, ConsoleColor color) {
-        Console.ForegroundColor = color;
-        Console.WriteLine(text);
+    public static void PrintAsterisks(int amount) {
+        string asterisks = "";
+        for (int i = 0; i < amount; i++) {
+            asterisks = asterisks + "*";
+        }
+        Console.WriteLine(asterisks);
     }
 }
