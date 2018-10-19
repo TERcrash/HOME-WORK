@@ -2,35 +2,35 @@
 
 class Program {
     static void Main() {
-        string mostWidespread = Task.GetMostWidespread(new[] { "Emperor Penguin", "Macaroni Penguin", "Emperor Penguin", "Little Penguin" });
+        string mostWidespread = Task.GetMostWidespread(new[] { "Emperor Penguin", "Macaroni Penguin", "Emperor Penguin", "Little Penguin", "Little Penguin" });
         Console.WriteLine(mostWidespread); // Emperor Penguin
     }
 }
 
 class Task {
-    int EmperorPenguins = 0;
-    int LittlePenguins = 0;
-    int MacaroniPenguins = 0;
-    public static String GetMostWidespread() {
-        for (int i = 0; i < mostWidespread; i++) {
-            if (mostWidespread[i] = "Emperor Penguins") {
+    static int EmperorPenguins = 0;
+    static int LittlePenguins = 0;
+    static int MacaroniPenguins = 0;
+    public static String GetMostWidespread(String[] penguins) {
+        for (int i = 0; i < penguins.Length; i++) {
+            if (penguins[i] == "Emperor Penguin") {
                 EmperorPenguins = EmperorPenguins + 1;
             }
 
-            if (mostWidespread[i] = "Little Penguins") {
+            if (penguins[i] == "Little Penguin") {
                 LittlePenguins = LittlePenguins + 1;
             }
 
-            if (mostWidespread[i] = "Macaroni Penguins") {
+            if (penguins[i] == "Macaroni Penguin") {
                 MacaroniPenguins = MacaroniPenguins + 1;
             }
         }
-        if (EmperorPenguins > EmperorPenguins && EmperorPenguins > MacaroniPenguins) {
-            return EmperorPenguins;
-        } else if (LittlePenguins > EmperorPenguins && LittlePenguins > MacaroniPenguins) {
-            return LittlePenguins;
+        if (EmperorPenguins >= LittlePenguins && EmperorPenguins >= MacaroniPenguins) {
+            return "Emperor Penguin";
+        } else if (LittlePenguins >= EmperorPenguins && LittlePenguins >= MacaroniPenguins) {
+            return "Little Penguin";
         } else {
-            return MacaroniPenguins;
+            return "Macaroni Penguin";
         }
     }
 }
