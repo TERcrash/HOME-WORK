@@ -1,42 +1,48 @@
 import processing.core.PApplet;
 
-import java.util.ArrayList;
-
 public class Main extends PApplet {
 
-    Hero hero = new Hero(this);
+
+    World world;
 
     public static void main(String[] args) {
         PApplet.main(Main.class);
     }
 
-    public void settings(){
-        size(800,800);
+    public void settings() {
+        size(768, 768);
+
+        world = new World(this);
     }
 
-    public void draw(){
-        background(136, 14, 244);
+    public void setup(){
+        world.createMap();
+    }
+
+    public void draw() {
+        background(109, 58, 112);
         noStroke();
 
-        hero.draw();
-        hero.move();
+        world.draw();
     }
 
     public void keyPressed() {
-        if(key=='w'){
-            hero.side=hero.up;
+
+        if (key == 'w') {
+            world.hero.side = world.hero.up;
         }
 
-        if(key=='s'){
-            hero.side=hero.down;
+        if (key == 's') {
+            world.hero.side = world.hero.down;
         }
 
-        if(key=='a'){
-            hero.side=hero.left;
+        if (key == 'a') {
+            world.hero.side = world.hero.left;
         }
 
-        if(key=='d'){
-            hero.side=hero.right;
+        if (key == 'd') {
+            world.hero.side = world.hero.right;
         }
+
     }
 }
