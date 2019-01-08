@@ -7,11 +7,11 @@ public class Hero {
     String right = "right";
     String side = right;
 
-    int speed=8;
+    int speed = 8;
 
-    Boolean isMoving=false;
+    Boolean isMoving = false;
 
-    int size=64;
+    int size = 64;
 
     int x = 0;
     int y = 0;
@@ -23,7 +23,7 @@ public class Hero {
     }
 
     void draw() {
-        parent.fill(255,0,121);
+        parent.fill(255, 0, 121);
         parent.rect(x, y, size, size);
     }
 
@@ -45,8 +45,8 @@ public class Hero {
         }
     }
 
-    void reset(){
-        x=0;
-        y=0;
+    void reset() {
+        x = 0;
+        y = 0;
     }
 }

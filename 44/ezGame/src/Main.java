@@ -2,12 +2,11 @@ import processing.core.PApplet;
 
 public class Main extends PApplet {
 
-
     World world;
 
-    static String GAME="game";
-    static String GAME_OVER="gameover";
-    static String screen=GAME;
+    static String GAME = "game";
+    static String GAME_OVER = "gameover";
+    static String screen = GAME;
 
     public static void main(String[] args) {
         PApplet.main(Main.class);
@@ -36,11 +35,11 @@ public class Main extends PApplet {
         world.draw();
     }
 
-    void game(){
+    void game() {
         world.draw();
     }
 
-    void gameOver(){
+    void gameOver() {
         background(0x3E3636);
         fill(255);
         textSize(40);
@@ -49,41 +48,34 @@ public class Main extends PApplet {
         text("press 'r' to restart", width / 3, height / 2);
 
 
-
         if (keyPressed) {
             if (key == 'r') {
-                restart();
+                world.restart();
             }
         }
     }
 
-    void restart(){
-        screen=GAME;
-        world.hero.reset();
-        world.hero.isMoving=false;
-        world.createMap();
-    }
 
     public void keyPressed() {
         if (!world.hero.isMoving) {
             if (key == 'w') {
                 world.hero.side = world.hero.up;
-                world.hero.isMoving=true;
+                world.hero.isMoving = true;
             }
 
             if (key == 's') {
                 world.hero.side = world.hero.down;
-                world.hero.isMoving=true;
+                world.hero.isMoving = true;
             }
 
             if (key == 'a') {
                 world.hero.side = world.hero.left;
-                world.hero.isMoving=true;
+                world.hero.isMoving = true;
             }
 
             if (key == 'd') {
                 world.hero.side = world.hero.right;
-                world.hero.isMoving=true;
+                world.hero.isMoving = true;
             }
         }
 
