@@ -78,6 +78,11 @@ public class Main extends PApplet {
                 world.hero.isMoving = true;
             }
         }
-
+        if (world.numberOfLvl == 6) {
+            if (key == 'u') {
+                world.hero.x = 4 * world.hero.size;
+                world.hero.y = 3 * world.hero.size;
+            }
+        }
     }
 }
