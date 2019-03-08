@@ -2,9 +2,13 @@ package com.vector;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import java.util.ArrayList;
+
 public class Main extends PApplet{
 
     World world;
+
+    ArrayList<Building> buildings;
 
     PImage selectedImage;
 
@@ -20,12 +24,18 @@ public class Main extends PApplet{
         noStroke();
 
         world=new World(this);
+
+        buildings=new ArrayList<>();
     }
 
     public void draw(){
         background(244, 206, 66);
+        noFill();
 
         world.draw();
+        for(int i=0;i<buildings.size();i++){
+            buildings.get(i).draw();
+        }
         if(selectedImage!=null) {
             image(selectedImage, mouseX-selectedImage.width/2, mouseY-selectedImage.height/2);
         }
@@ -38,6 +48,12 @@ public class Main extends PApplet{
             if(mouseX>component.x && mouseY>component.y && mouseX<width && mouseY<component.y+100){
                 PApplet.println(component.buildingNumber);
                 selectedImage=component.building;
+                component.isTaken=true;
+            }
+            if(component.isTaken && mouseX<430){
+                buildings.add(new Building(mouseX-component.building.width/2,mouseY-component.building.height/2,i,this));
+                component.isTaken=false;
+                selectedImage=null;
             }
         }
     }

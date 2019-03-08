@@ -16,7 +16,7 @@ public class MenuItem {
 
     PImage building;
 
-    PImage[] buildings = new PImage[6];
+    PImage[] buildings = new PImage[5];
 
     MenuItem(int x, int y, int buildingNumber, PApplet p) {
         this.x = x;
@@ -29,7 +29,6 @@ public class MenuItem {
         buildings[2] = parent.loadImage("barrack.png");
         buildings[3] = parent.loadImage("clan castle.png");
         buildings[4] = parent.loadImage("army camp.png");
-        buildings[5] = parent.loadImage("archer tower.png");
 
         building = buildings[buildingNumber];
     }
@@ -39,6 +38,7 @@ public class MenuItem {
     }
 
     void drawPanel(){
+        parent.fill(255);
         parent.rect(465,0,parent.width,parent.height);
     }
 }
