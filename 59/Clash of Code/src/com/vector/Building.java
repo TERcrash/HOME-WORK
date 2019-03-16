@@ -3,7 +3,7 @@ package com.vector;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Building {
+public class Building extends MenuItem{
     PApplet parent;
 
     PImage[] skin=new PImage[5];

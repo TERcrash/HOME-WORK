@@ -18,7 +18,7 @@ public class MenuItem {
 
     PImage[] buildings = new PImage[5];
 
-    MenuItem(int x, int y, int buildingNumber, PApplet p) {
+    public MenuItem(int x, int y, int buildingNumber, PApplet p) {
         this.x = x;
         this.y = y;
         this.buildingNumber = buildingNumber;
