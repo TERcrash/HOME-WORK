@@ -11,7 +11,7 @@ public class Main extends PApplet {
 
     ArrayList<Building> buildings;
 
-    ArrayList<Upgrate> buttons;
+    ArrayList<Upgrade> buttons;
 
     PImage selectedImage;
 
@@ -44,12 +44,15 @@ public class Main extends PApplet {
         if (selectedImage != null) {
             image(selectedImage, mouseX - selectedImage.width / 2, mouseY - selectedImage.height / 2);
         }
+
+        for(int i=0;i<buttons.size();i++){
+            buttons.get(i).draw();
+        }
     }
 
     @Override
     public void mousePressed() {
         for (int i = 0; i < world.components.length; i++) {
-            for (int j = 0; j < buildings.size(); j++) {
                 MenuItem component = world.components[i];
                 if (mouseX > component.x && mouseY > component.y && mouseX < width && mouseY < component.y + 100) {
                     PApplet.println(component.buildingNumber);
@@ -58,15 +61,14 @@ public class Main extends PApplet {
                 }
                 if (component.isTaken && mouseX < 430) {
                     buildings.add(new Building(mouseX - component.building.width / 2, mouseY - component.building.height / 2, i, this));
+                    if (mouseX > component.x && mouseY > component.y && mouseX < component.x + component.building.width / 2 && mouseY < component.y + component.building.height) {
+                        buttons.add(new Upgrade(component.x,component.y,this));
+                    }
                     component.isTaken = false;
                     selectedImage = null;
                 }
 
-                Building building = buildings.get(j);
-                if (mouseX > building.x && mouseY > building.y && mouseX < building.x + component.building.width / 2 && mouseY < building.y + building.skin[j].height) {
 
-                }
-            }
         }
     }
 }
