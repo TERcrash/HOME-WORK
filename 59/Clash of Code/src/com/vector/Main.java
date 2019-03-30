@@ -11,8 +11,6 @@ public class Main extends PApplet {
 
     ArrayList<Building> buildings;
 
-    ArrayList<Upgrade> buttons;
-
     PImage selectedImage;
 
     public static void main(String[] args) {
@@ -29,8 +27,6 @@ public class Main extends PApplet {
         world = new World(this);
 
         buildings = new ArrayList<>();
-
-        buttons = new ArrayList<>();
     }
 
     public void draw() {
@@ -44,31 +40,32 @@ public class Main extends PApplet {
         if (selectedImage != null) {
             image(selectedImage, mouseX - selectedImage.width / 2, mouseY - selectedImage.height / 2);
         }
-
-        for(int i=0;i<buttons.size();i++){
-            buttons.get(i).draw();
-        }
     }
 
     @Override
     public void mousePressed() {
         for (int i = 0; i < world.components.length; i++) {
-                MenuItem component = world.components[i];
-                if (mouseX > component.x && mouseY > component.y && mouseX < width && mouseY < component.y + 100) {
-                    PApplet.println(component.buildingNumber);
-                    selectedImage = component.building;
-                    component.isTaken = true;
-                }
-                if (component.isTaken && mouseX < 430) {
-                    buildings.add(new Building(mouseX - component.building.width / 2, mouseY - component.building.height / 2, i, this));
-                    if (mouseX > component.x && mouseY > component.y && mouseX < component.x + component.building.width / 2 && mouseY < component.y + component.building.height) {
-                        buttons.add(new Upgrade(component.x,component.y,this));
-                    }
-                    component.isTaken = false;
-                    selectedImage = null;
-                }
+            MenuItem component = world.components[i];
 
+            if (mouseX > 430) {
+                component.isTaken = false;
+            }
 
+            if (mouseX > component.x && mouseY > component.y && mouseX < width && mouseY < component.y + 100) {
+                PApplet.println(component.buildingNumber);
+                selectedImage = component.building;
+                component.isTaken = true;
+            }
+
+            if (component.isTaken && mouseX < 430) {
+                buildings.add(new Building(mouseX - component.building.width / 2, mouseY - component.building.height / 2, i, true, this));
+                component.isTaken = false;
+                selectedImage = null;
+            }
+
+            /*if (mouseX > component.x && mouseY > component.y && mouseX < component.x + component.building.width && mouseY < component.y + component.building.height) {
+                buttons.add(new Upgrade(component.x, component.y, this));
+            }*/
         }
     }
 }
