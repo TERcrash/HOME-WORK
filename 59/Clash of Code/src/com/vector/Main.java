@@ -62,10 +62,6 @@ public class Main extends PApplet {
                 component.isTaken = false;
                 selectedImage = null;
             }
-
-            /*if (mouseX > component.x && mouseY > component.y && mouseX < component.x + component.building.width && mouseY < component.y + component.building.height) {
-                buttons.add(new Upgrade(component.x, component.y, this));
-            }*/
         }
     }
 }

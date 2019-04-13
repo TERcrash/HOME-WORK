@@ -14,7 +14,7 @@ public class World {
 
         components = new MenuItem[]{new MenuItem(480, 455, 0, parent), new MenuItem(480, 335, 1, parent),new MenuItem(480,230,2,parent),new MenuItem(480,115,3,parent),new MenuItem(480,10,4,parent)};
 
-        tips= new Tip[]{new Tip(0,"Town Hall","workers will live here",parent),new Tip(1,"Elixir Collector", "extracts elixir",parent),new Tip(2 ,"Barrack", "war will be trained \nhere",parent),new Tip(3,"Clan Castle", "need to join the clan",parent),new Tip(4,"Army Camp", "war will be live here",parent)};
+        tips= new Tip[]{new Tip(458,0,"Town Hall","workers will live here",parent),new Tip(342,1,"Elixir Collector", "extracts elixir",parent),new Tip(228,2 ,"Barrack", "war will be trained \nhere",parent),new Tip(114,3,"Clan Castle", "need to join the clan",parent),new Tip(0,4,"Army Camp", "war will be live here",parent)};
     }
 
     void draw() {

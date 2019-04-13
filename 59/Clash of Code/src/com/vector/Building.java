@@ -21,11 +21,12 @@ public class Building extends MenuItem{
 
         this.onGround =onGround;
 
-        upgrade=new Upgrade(x, y, parent);
+        upgrade=new Upgrade(x+23, y-40, parent);
     }
 
     void draw(){
         parent.image(buildings[buildingNumber],x,y);
         upgrade.draw();
+        upgrade.collision();
     }
 }

@@ -27,4 +27,10 @@ public class Upgrade {
         parent.image(button,0,0);
         parent.popMatrix();
     }
+
+    void collision(){
+        if(parent.mouseX>x && parent.mouseY>y && parent.mouseX<x+button.width*0.1f && parent.mouseY<y+button.height*0.1f && parent.mousePressed){
+            PApplet.print("каво\n");
+        }
+    }
 }
