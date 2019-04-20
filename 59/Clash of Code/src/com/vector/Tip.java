@@ -1,6 +1,7 @@
 package com.vector;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Tip {
     PApplet parent;
@@ -24,12 +25,12 @@ public class Tip {
         this.description=description;
     }
 
-    void draw(int buildingNumber) {
+    void draw(int buildingNumber, PImage[] buildings) {
         parent.fill(255);
-        parent.rect(465, y, parent.width-465, 122);
+        parent.rect(465, y, parent.width-465,buildings[buildingNumber].height);
 
         if (buildingNumber == tipNumber) {
-            parent.textSize(20);
+            parent.textSize(18);
             parent.fill(104, 149, 221);
             parent.text(title, 470, y+30);
             parent.textSize(15);

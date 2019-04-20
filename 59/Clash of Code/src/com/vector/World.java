@@ -12,9 +12,9 @@ public class World {
     World(PApplet p) {
         this.parent = p;
 
-        components = new MenuItem[]{new MenuItem(480, 455, 0, parent), new MenuItem(480, 335, 1, parent),new MenuItem(480,230,2,parent),new MenuItem(480,115,3,parent),new MenuItem(480,10,4,parent)};
+        components = new MenuItem[]{new MenuItem(480, 465, 0, parent), new MenuItem(480, 335, 1, parent),new MenuItem(480,230,2,parent),new MenuItem(480,110,3,parent),new MenuItem(480,10,4,parent)};
 
-        tips= new Tip[]{new Tip(458,0,"Town Hall","workers will live here",parent),new Tip(342,1,"Elixir Collector", "extracts elixir",parent),new Tip(228,2 ,"Barrack", "war will be trained \nhere",parent),new Tip(114,3,"Clan Castle", "need to join the clan",parent),new Tip(0,4,"Army Camp", "war will be live here",parent)};
+        tips= new Tip[]{new Tip(465,0,"Town Hall","workers will live \nhere",parent),new Tip(335,1,"Elixir Collector", "extracts elixir",parent),new Tip(230,2 ,"Barrack", "war will be \ntrained here",parent),new Tip(110,3,"Clan Castle", "need to join the \nclan",parent),new Tip(10,4,"Army Camp", "war will be live \nhere",parent)};
     }
 
     void draw() {
@@ -29,7 +29,7 @@ public class World {
         for (int i = 0; i < components.length; i++) {
             MenuItem component = components[i];
             if(parent.mouseX>component.x && parent.mouseY>component.y && parent.mouseX<parent.width && parent.mouseY<component.y+100){
-                tips[i].draw(component.buildingNumber);
+                tips[i].draw(component.buildingNumber,component.buildings);
             }
         }
     }
