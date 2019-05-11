@@ -3,7 +3,7 @@ package com.vector;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Upgrade {
+public class Upgrade{
     PApplet parent;
 
     PImage button;
@@ -11,7 +11,11 @@ public class Upgrade {
     int x;
     int y;
 
-    Upgrade(int x, int y, PApplet p){
+    int clicked;
+
+    Building building;
+
+    Upgrade(int x, int y,PApplet p){
         this.parent=p;
 
         this.x=x;
@@ -29,8 +33,13 @@ public class Upgrade {
     }
 
     void collision(){
-        if(parent.mouseX>x && parent.mouseY>y && parent.mouseX<x+button.width*0.1f && parent.mouseY<y+button.height*0.1f && parent.mousePressed){
-            PApplet.print("каво\n");
+        if(parent.mousePressed) {
+            clicked = clicked+1;
+            if (parent.mouseX > x && parent.mouseY > y && parent.mouseX < x + button.width * 0.1f && parent.mouseY < y + button.height * 0.1f && clicked<2) {
+                building.upgrade();
+            }
+        }else{
+            clicked=0;
         }
     }
 }
